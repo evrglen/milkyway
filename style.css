@@ -1,0 +1,204 @@
+body {
+    background-color: #000000; 
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    font-weight: 500;
+}
+
+.navbar ul li a.active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.container, main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+section {
+    padding: 2rem 0;
+}
+
+ul, ol {
+    padding-left: 1.2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.card, .feature-card {
+    background-color: #000000;
+    border: 1px solid #444444;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+}
+
+.card img, .feature-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+button, input[type="submit"], input[type="reset"], .btn {
+    cursor: pointer;
+    background-color: #0033ff;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover, input[type="submit"]:hover, input[type="reset"]:hover, .btn:hover {
+    background-color: #ffcc00;
+    color: #000000;
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea,
+select {
+    background-color: #000000; 
+    border: 1px solid #444444;
+    color: #3399ff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: 2px solid #3399ff;
+}
+
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 2rem;
+    color: #3399ff;
+    background-color: #000000;
+}
+
+th, td {
+    border: 1px solid #444444;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+th {
+    background-color: #000000;
+}
+
+td {
+    background-color: #000000;
+}
+
+
+footer, .footer, .minifooter {
+    background-color: #000000;
+    color: #3399ff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.passport-container {
+    position: relative;
+    display: inline-block;
+    margin: 1rem auto;
+    max-width: 600px;
+}
+
+.passport-img {
+    width: 100%;
+    display: block;
+}
+
+.passport-text {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1rem;
+    color: black;
+}
+
+.console-img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+}
+
+#translateBtn, #langBtn {
+    border: 2px solid #3399ff;
+    color: #3399ff;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#translateBtn:hover, #langBtn:hover {
+    background-color: #ffcc00;
+    color: #000000;
+}
+
+#seatResult {
+    padding: 1rem;
+    background-color: #000000;
+    border: 1px solid #3399ff;
+    border-radius: 5px;
+    margin-top: 1rem;
+    color: #3399ff;
+}
+
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+    section, main {
+        padding: 1rem;
+    }
+    .passport-text {
+        font-size: 0.9rem;
+    }
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url('starry-sky.gif') no-repeat center center fixed;
+  background-size: cover;
+}

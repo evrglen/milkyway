@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Паспорт - Звезды Млечного пути</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <script defer>
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('translateBtn');
+
+            const originalText = {
+                fullname1: 'ЗИЗИНА',
+                fullname2: 'ЕКАТЕРИНА',
+                fullname3: 'РОМАНОВНА',
+                genderCity: 'Ж               Г. МОСКВА',
+                dob: '30.12.2007'
+            };
+
+            const latinText = {
+                fullname1: 'ZIZINA',
+                fullname2: 'EKATERINA',
+                fullname3: 'ROMANOVNA',
+                genderCity: 'F               MOSCOW',
+                dob: '30.12.2007'
+            };
+
+            let isCyrillic = true;
+
+            button.addEventListener('click', function() {
+                document.getElementById('fullname-line1').innerText = isCyrillic ? latinText.fullname1 : originalText.fullname1;
+                document.getElementById('fullname-line2').innerText = isCyrillic ? latinText.fullname2 : originalText.fullname2;
+                document.getElementById('fullname-line3').innerText = isCyrillic ? latinText.fullname3 : originalText.fullname3;
+                document.getElementById('gender-city').innerText = isCyrillic ? latinText.genderCity : originalText.genderCity;
+                document.getElementById('dob').innerText = isCyrillic ? latinText.dob : originalText.dob;
+                isCyrillic = !isCyrillic;
+            });
+        });
+    </script>
+</head>
+<body class="bg-dark text-light" onload="window.scrollTo(0,0);">
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
+    <div class="container">
+        <div class="navbar-nav">
+            <a class="nav-link text-light" href="index.html">Главная</a>
+            <a class="nav-link text-light" href="index2.html">О проекте</a>
+            <a class="nav-link text-light" href="index3.html">Задача</a>
+            <a class="nav-link text-light active" href="passportanddom.html">Паспорт</a>
+        <li class="nav-item"><a class="nav-link" href="consult.html">Получить путеводитель</a></li>
+        </div>
+    </div>
+</nav>
+
+<main class="container py-5">
+
+    <h2 class="mb-4 text-center">Паспорт</h2>
+
+
+    <div class="passport-container position-relative mx-auto mb-4" style="max-width:600px;">
+
+        <img src="passport-blank.jpg" class="img-fluid rounded passport-img" alt="Blank Passport">
+
+
+        <img src="passport-photo.jpg" class="position-absolute rounded border" 
+             style="top:420px; left:50px; width:120px; height:auto;" alt="Фото паспорта">
+
+        <p id="fullname-line1" class="passport-text position-absolute fw-bold" 
+           style="top:430px; left:200px; font-size:1rem; color:black;">ЗИЗИНА</p>
+        <p id="fullname-line2" class="passport-text position-absolute fw-bold" 
+           style="top:460px; left:200px; font-size:1rem; color:black;">ЕКАТЕРИНА</p>
+        <p id="fullname-line3" class="passport-text position-absolute fw-bold" 
+           style="top:490px; left:200px; font-size:1rem; color:black;">РОМАНОВНА</p>
+
+        <p id="gender-city" class="passport-text position-absolute fw-bold" 
+           style="top:520px; left:200px; font-size:1rem; color:black;">Ж               Г. МОСКВА</p>
+
+        <p id="dob" class="passport-text position-absolute fw-bold" 
+           style="top:550px; left:200px; font-size:1rem; color:black;">30.12.2007</p>
+    </div>
+
+    <div class="text-center my-3">
+        <button id="translateBtn" class="btn btn-outline-primary">Переключить язык</button>
+    </div>
+
+    <h2 id="console" class="mt-5 mb-3 text-center">DOM_JS. Считываем информацию из DOM</h2>
+    <img src="domreading.jpg" class="console-img mx-auto d-block" alt="Пример считывания информации из DOM" height="500">
+
+</main>
+
+<footer class="footer bg-black text-center py-4 border-top border-secondary">
+    <p>Всех звезд не счесть, но вот те, что есть</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
