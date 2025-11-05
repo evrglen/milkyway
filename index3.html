@@ -30,28 +30,42 @@
   <p class="text-center">Определить, какое место в плацкарте: верхнее или нижнее, в купе или боковое.</p>
 
   <div class="mb-3">
-    <input type="number" id="seatInput" class="form-control" placeholder="Введите номер места">
+    <input type="number" id="seat" class="form-control" placeholder="Введите номер места">
   </div>
   <div class="text-center mb-3">
-    <button id="checkSeatButton" class="btn btn-light">Проверить</button>
+    <button onclick="checkSeat()" class="btn btn-light">Проверить</button>
   </div>
   <div id="seatResult" class="text-center fs-5"></div>
 </div>
 
-
 <script>
-function isCoupe(seat) { return seat <= 36 ? "Купе" : "Боковое"; }
-function isUpperOrLower(seat) {
-  if(seat<=36){const mod=seat%4;return (mod===1||mod===2)?"Нижнее":"Верхнее";}
-  return seat%2===1?"Нижнее":"Верхнее";
+function checkSeat() {
+  let seat = document.getElementById("seat").value;
+  seat = parseInt(seat);
+  let result = "";
+
+  if (isNaN(seat)) {
+    result = "Введите число!";
+  } else if (seat < 1 || seat > 54) {
+    result = "Место должно быть от 1 до 54!";
+  } else {
+    // Купе или боковое
+    if (seat <= 36) {
+      result = "Это купе, ";
+      // Верх/низ для купе
+      const mod = seat % 4;
+      result += (mod === 1 || mod === 2) ? "низ" : "верх";
+    } else {
+      result = "Это боковое, ";
+      // Верх/низ для бокового
+      result += (seat % 2 === 0) ? "верх" : "низ";
+    }
+  }
+
+  document.getElementById("seatResult").innerText = result;
 }
-document.getElementById('checkSeatButton').addEventListener('click',function(){
-  const seat=parseInt(document.getElementById('seatInput').value);
-  const resultDiv=document.getElementById('seatResult');
-  if(isNaN(seat)||seat<1||seat>54){resultDiv.innerText="Введите корректный номер места (1–54)";return;}
-  resultDiv.innerText=`Место ${seat}: ${isCoupe(seat)}, ${isUpperOrLower(seat)}`;
-});
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
